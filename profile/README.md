@@ -75,14 +75,24 @@ Because a counter gets more out of the suite than the suite asks of it:
 ## What is here
 
 [`linejudge`](https://github.com/loc-conformance/linejudge) holds the corpus of cases and the
-harness that runs a counter over them.
+harness that runs a counter over them.  
+[`linebench`](https://github.com/loc-conformance/linebench) measures a counter, or many counters
+against each other. Every counter
+over the same tree with the same settings, and its counts are checked against the commit first.
+Each run reports wall time, user and system cpu, the parallelism reached and lines per cpu second,
+with the state of the machine beside them: background cpu, the spread across runs, the outliers,
+the power scheme, the Windows Defender exclusions, so a reader has the context to read the numbers
+and the uncertainty of one machine against another mostly falls away. It also reports peak memory
+and the counts of system calls, which a timed run cannot measure about itself.
 
 ## Status
 
 **Not yet a stable 1.0.0.** The results page is at https://loc-conformance.github.io/linejudge/.
 `linejudge` is on crates.io, and its [releases](https://github.com/loc-conformance/linejudge/releases)
 carry a binary for Windows, Linux and macOS. The corpus, the declaration format and the rules are
-open to change from what other counter authors find, which is what stands between this and a 1.0.
+open to change from what other counter authors find, which is what stands between this and a 1.0.  
+`linebench` is on crates.io as well, with the same three binaries on its
+[releases](https://github.com/loc-conformance/linebench/releases) page.
 
 ## Neutrality
 
